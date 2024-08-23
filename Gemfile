@@ -17,12 +17,12 @@ gem "minima", "~> 2.5"
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 # gem "github-pages", group: :jekyll_plugins
 # Find version here: https://pages.github.com/versions/
-gem "github-pages", "~> 217", group: :jekyll_plugins
+gem "github-pages", "~> 218", group: :jekyll_plugins
 
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.15"
+  gem "jekyll-feed", "~> 0.16", ">= 0.16.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
