@@ -1,41 +1,79 @@
-# Welcome to Jekyll!
+# The Site Configuration
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# The following values are used to configure the site.
+# For more options, see: https://jekyllrb.com/docs/configuration/
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 title: I'm Vlad you're here
-email: smile@vlad.blog
-description: >- # this means to ignore newlines until "baseurl:"
+description: >-
   Music, puns, and software engineering.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://vlads.page" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: vladstoian
-github_username:  vlad-stoian
+tagline: Music, puns, and software engineering.
+author: Vlad Stoian
+email: smile@vlad.blog
+url: "https://vlads.page"
+baseurl: ""
 
-# Build settings
+# Theme Settings
+theme: jekyll-theme-chirpy
+
+# Language & Timezone
+lang: en
+timezone: UTC
+
+# Social Accounts (Chirpy specific)
+social:
+  name: Vlad Stoian
+  email: smile@vlad.blog
+  links:
+    - https://twitter.com/vladstoian
+    - https://github.com/vlad-stoian
+    - https://linkedin.com/in/vladstoian
+
+# Build Settings
 markdown: kramdown
-theme: minima
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Plugins
 plugins:
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-include-cache
   - jekyll-feed
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Archives
+archives:
+  enabled: [categories, tags]
+  layouts:
+    category: archives-category
+    tag: archives-tag
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+# Chirpy Specifics
+avatar: /assets/img/avatar.png  # Placeholder, user should update this
+google_analytics:
+  # id:
+  # google_tag_manager:
+
+disqus:
+  # shortname:
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
